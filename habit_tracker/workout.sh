@@ -4,8 +4,8 @@
 # date, number of hours, workout type, boulder, roped, workouts, cardio
 # writes to a .txt file in the logs folder
 
-# new terminal command "update_workout"
-# alias update_workout="(cd Documents/Github/scripts/; ./workout.sh)"
+# in ~/.bashrc add
+# alias update_workout="(cd Documents/Github/scripts/habit_tracker/; ./workout.sh)"
 
 currentDate=$(date +"%Y-%m-%d")
 while true; do
@@ -13,7 +13,7 @@ while true; do
     read answer
     if [[ "$answer" == "n" ]]; then
         echo 'No exercise'
-        echo "$currentDate,$hours,$type,$bp,$rc,$workouts,$cardio" >> ../logs/workout.txt
+        echo "$currentDate,$hours,$type,$bp,$rc,$workouts,$cardio" >> ../../logs/workout.txt
         break
     elif [[ "$answer" == "y" ]];then
         printf 'How long was the session (minutes): '
@@ -34,7 +34,7 @@ while true; do
             printf 'Cardio (workout, duration): '
             read cardio
         fi
-        echo "$currentDate,$hours,$type,$bp,$rc,$workouts,$cardio" >> ../logs/workout.txt
+        echo "$currentDate,$hours,$type,$bp,$rc,$workouts,$cardio" >> ../../logs/workout.txt
         echo "Finished recording! "
         break
     else
