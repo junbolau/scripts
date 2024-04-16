@@ -26,7 +26,7 @@ if todo_today == "record":
 
     to_write = str(date.today()) + ',' +meditate + workout + drink + sleeping + readbooks + machinelearning + coding + outdoor + "\n"
 
-    f = open("../logs/habits.txt","w+")
+    f = open("../../logs/habits.txt","a+")
     f.write(to_write)
     f.close()
 
@@ -34,7 +34,7 @@ if todo_today == "record":
 elif todo_today == "visualise":
     days = input("last # days: ")
     days = int(days)
-    f = open("../logs/habits.txt","r").readlines()
+    f = open("../../logs/habits.txt","r").readlines()
     
     habits = ['Meditate','Workout/stretch','Drink','Sleep','Read','ML','Code','Outdoor']
     d = defaultdict(str)
